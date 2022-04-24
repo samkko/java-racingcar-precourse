@@ -1,6 +1,6 @@
 package racingcar.exception;
 
-public interface ErrorMessageHandler {
+public interface MessageException {
 
     String getErrorMessage();
 

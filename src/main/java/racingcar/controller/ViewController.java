@@ -26,4 +26,8 @@ public class ViewController {
     public void printMessageWithNewLine(String message) {
         outputView.printMessageWithNewLine(message);
     }
+
+    public void printMessage(String message) {
+        outputView.printMessage(message);
+    }
 }

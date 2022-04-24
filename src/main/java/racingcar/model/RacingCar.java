@@ -43,4 +43,18 @@ public class RacingCar {
     public int getDistance() {
         return distance;
     }
+
+    @Override
+    public String toString() {
+        return name + " : " + distanceToString();
+    }
+
+    private String distanceToString() {
+        StringBuilder distanceString = new StringBuilder();
+        for(int i = 0 ; i < distance ; i++) {
+            distanceString.append("-");
+        }
+
+        return distanceString.toString();
+    }
 }

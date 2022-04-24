@@ -21,7 +21,7 @@ public class RacingCars implements Iterable<RacingCar> {
 
         RacingCars racingCars = new RacingCars();
 
-        for(String name : names) {
+        for (String name : names) {
             racingCars.cars.add(RacingCar.createRacingCarWithDefaultStrategy(name));
         }
 
@@ -30,7 +30,7 @@ public class RacingCars implements Iterable<RacingCar> {
 
     private static void validateName(String name) {
         String[] names = name.split(NAME_SPLIT_REGEX);
-        if(names.length < 2) {
+        if (names.length < 2) {
             throw new InvalidUserCountException();
         }
     }
@@ -42,5 +42,16 @@ public class RacingCars implements Iterable<RacingCar> {
     @Override
     public Iterator<RacingCar> iterator() {
         return cars.iterator();
+    }
+
+    public int getMaxDistance() {
+        int max = 0;
+
+        for (RacingCar racingCar : cars) {
+            int distance = racingCar.getDistance();
+            max = Math.max(distance, max);
+        }
+
+        return max;
     }
 }
